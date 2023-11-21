@@ -1,0 +1,26 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /demo
+
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/devdb?currentSchema=demo
+    username: vipul-anky
+    password: test
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 300000
+      max-lifetime: 1200000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_schema: demo
+        jdbc.lob.non_contextual_creation: true
